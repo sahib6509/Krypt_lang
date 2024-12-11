@@ -1,0 +1,29 @@
+Program:
+  'hi'
+    commands*=Command
+  'best regards'
+;
+
+Command:
+  SendEmail | ReceiveEmail | DecodeBase64 | Checker
+;
+
+Checker:
+    'Hope' 'this' 'email' 'finds' 'you' 'well' data_file=STRING
+;
+
+DecodeBase64:
+    'If' 'that' 'is' 'the' 'case' 'I' 'will' 'see' 'you' 'soon' data_file=STRING
+;
+
+
+SendEmail:
+    'Send' 'email' 'to' recipient=STRING
+;
+
+ReceiveEmail:
+    'Received' 'email' 'from' recipient=STRING
+;
+
+STRING: /"[^"]*"/
+;
